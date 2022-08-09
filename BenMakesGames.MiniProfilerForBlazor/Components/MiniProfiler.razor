@@ -1,0 +1,26 @@
+﻿@if (Requests is { Count: > 0 })
+{
+    <button type="button" class="main-button" style="z-index:@ZIndex" @onclick="@(() => Visible = !Visible)">@(Visible ? "Hide" : "Show") MiniProfiler</button>
+    @if (Visible)
+    {
+        <div class="mini-profiler" style="z-index:@ZIndex">
+            <ul class="requests">
+                @for (var i = 0; i < Requests.Count; i++)
+                {
+                    var scopedIndex = i;
+                    <li><button class="@(Expanded == Requests[scopedIndex] ? "selected" : "")" @onclick="() => Show(Requests[scopedIndex])">@i</button></li>
+                }
+            </ul>
+            <div class="iframe-container">
+                @if (Expanded != null)
+                {
+                    <iframe src="/api/v1/profiler/results?id=@Expanded"></iframe>
+                }
+                else
+                {
+                    <p>Select a request to view its details.</p>
+                }
+            </div>
+        </div>    
+    }
+}

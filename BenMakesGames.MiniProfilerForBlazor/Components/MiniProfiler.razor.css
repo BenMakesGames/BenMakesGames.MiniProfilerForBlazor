@@ -1,0 +1,52 @@
+﻿button {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    color: #333;
+}
+
+button.main-button {
+    position: fixed;
+    left: 4px;
+    bottom: 4px;
+}
+
+button.selected {
+    background-color: #369;
+    color: #fff;
+}
+
+.mini-profiler {
+    position: fixed;
+    left: 4px;
+    bottom: calc(4px + 1.75em);
+    box-sizing: border-box;
+
+    width: 1000px;
+    max-width: calc(100vw - 8px);
+    
+    padding: 1em;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.25);
+}
+
+.mini-profiler .requests {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25em;
+    margin-bottom: 0.5em;
+}
+
+.iframe-container {
+    display: block;
+    width: 100%;
+    height: calc(100vh - 7em);
+    border: 1px solid #ccc;
+}
+
+iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
