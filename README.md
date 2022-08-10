@@ -4,8 +4,6 @@
 
 # Installation & Configuration
 
-These instructions assume you are using Refit (https://github.com/reactiveui/refit) to talk to your API. It is not necessary to use Refit, but you'll need to improvise a little to get `MiniProfilerForBlazor` working without Refit.
-
 ## API Project
 
 ### Install MiniProfiler in API Project
@@ -35,14 +33,21 @@ In your WebAssembly's `Program.cs`:
 services.AddMiniProfilerForBlazor();
 ```
 
-### Register Handler (Refit)
+### Register Handler
+
+#### Refit Client
 
 ```c#
-services.AddRefitClient<...>() // <-- your registration of your refit client
-    .AddMiniProfilerHandler();
+services.AddRefitClient<...>() // <-- your refit client registration
+    .AddMiniProfilerHandler(); // <-- add this
 ```
 
-`.AddMiniProfilerHandler()` works with any `IHttpClientBuilder`; it does not require Refit.
+#### Standard HttpClient
+
+```c#
+services.AddHttpClient<...>() // <-- your http client registration
+    .AddMiniProfilerHandler(); // <-- add this
+```
 
 ### Add MiniProfiler to UI
 
