@@ -1,12 +1,12 @@
-<a href='https://ko-fi.com/A0A12KQ16' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi3.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
-
 # What is This?
 
 `BenMakesGames.MiniProfilerForBlazor` adds a service & component for displaying MiniProfiler results on a Blazor WebAssembly front-end.
 
+[![Buy Me a Coffee at ko-fi.com](https://raw.githubusercontent.com/BenMakesGames/AssetsForNuGet/main/buymeacoffee.png)](https://ko-fi.com/A0A12KQ16)
+
 # Installation & Configuration
 
-## API Project
+## API Back-end Project
 
 ### Install MiniProfiler in API Project
 
@@ -21,7 +21,7 @@ Install & configure MiniProfiler: https://miniprofiler.com/dotnet/AspDotNetCore
 3. Verify that the response headers contains an `x-miniprofiler-ids` header
    * If the `x-miniprofiler-ids` header is not present, MiniProfiler has not been configured, and `MiniProfilerForBlazor` will not work
 
-## WebAssembly Project
+## WebAssembly Front-end Project
 
 ### Install this Package
 
@@ -66,4 +66,4 @@ In your `App.razor`, main layout, or wherever you want MiniProfiler to appear, a
 #### Component Options
 
 * `int ZIndex` z-index to display the MiniProfiler button & panel; defaults to 9999
-  * example: `<MiniProfiler ZIndex="39" />`
+  * Example: `<MiniProfiler ZIndex="39" />`

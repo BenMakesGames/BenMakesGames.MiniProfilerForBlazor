@@ -1,24 +1,30 @@
 <Project Sdk="Microsoft.NET.Sdk.Razor">
 
     <PropertyGroup>
+        <Authors>Ben Hendel-Doying</Authors>
+        <Company>Ben Hendel-Doying</Company>
+        <Description>Display MiniProfiler in your Blazor WebAssembly project.</Description>
+        <Copyright>2022-2023 Ben Hendel-Doying</Copyright>
+        <Version>1.1.0</Version>
+
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageTags>Blazor;WASM;Razor;Components;MiniProfiler;ASP.NET Core;CSharp;Web</PackageTags>
+        <PackageProjectUrl>https://github.com/BenMakesGames/MiniProfilerForBlazor</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/BenMakesGames/MiniProfilerForBlazor</RepositoryUrl>
+        <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageIcon>package-icon.png</PackageIcon>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <WarningsAsErrors>Nullable</WarningsAsErrors>
-
-        <Version>1.0.0</Version>
-        <Authors>Ben Hendel-Doying</Authors>
-        <Company>Ben Hendel-Doying</Company>
-        <Description>Display MiniProfiler in your Blazor WebAssembly project.</Description>
-        <Copyright>2022 Ben Hendel-Doying</Copyright>
-        <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
-        <PackageProjectUrl>https://github.com/BenMakesGames/MiniProfilerForBlazor</PackageProjectUrl>
-        <PackageTags>Blazor;WASM;Razor;Components;MiniProfiler;ASP.NET Core;CSharp;Web</PackageTags>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.8" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.16" />
         <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
     </ItemGroup>
 
@@ -27,5 +33,19 @@
             <Pack>True</Pack>
             <PackagePath />
         </None>
+        <None Include="..\README.md">
+            <Pack>True</Pack>
+            <PackagePath />
+        </None>
+        <None Include="..\package-icon.png">
+            <Pack>True</Pack>
+            <PackagePath />
+        </None>
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
     </ItemGroup>
 </Project>
